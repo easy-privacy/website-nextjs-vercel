@@ -1,13 +1,14 @@
 "use client";
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 interface DataEntry {
   data: string;
   purpose: string;
 }
 
-export default function FinalPolicyPage() {
+function FinalPolicyPage() {
   const searchParams = useSearchParams();
   
   const companyName = searchParams.get('companyName');
@@ -83,5 +84,13 @@ export default function FinalPolicyPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function FinalPolicyWrapper() {
+  return (
+    <Suspense fallback={<div>Loading policy...</div>}>
+      <FinalPolicyPage />
+    </Suspense>
   );
 }

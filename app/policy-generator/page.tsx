@@ -88,7 +88,7 @@ export default function PolicyGeneratorPage() {
     }
   
     // Proceed with policy generation if no errors
-    console.log('Generate Policy Document', { companyName, industry, dataEntries });
+    // console.log('Generate Policy Document', { companyName, industry, dataEntries });
     setErrorMessage(""); // Clear the error message after successful validation
 
     router.push(`/final-policy?companyName=${encodeURIComponent(companyName)}&industry=${encodeURIComponent(industry)}&emailId=${encodeURIComponent(emailId)}&dataEntries=${encodeURIComponent(JSON.stringify(dataEntries))}`);
