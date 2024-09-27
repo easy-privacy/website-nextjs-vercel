@@ -160,7 +160,7 @@ export default function LandingPage() {
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">
-                Ready to Secure Your Website's Privacy?
+                Ready to Secure Your Website&apos;s Privacy?
               </h2>
               <div id="contact" className="space-x-4">
                 <Link href="mailto:easyprivacyindia@gmail.com" className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">

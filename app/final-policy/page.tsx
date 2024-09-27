@@ -2,20 +2,24 @@
 
 import { useSearchParams } from 'next/navigation';
 
+interface DataEntry {
+  data: string;
+  purpose: string;
+}
+
 export default function FinalPolicyPage() {
   const searchParams = useSearchParams();
   
   const companyName = searchParams.get('companyName');
-  const industry = searchParams.get('industry');
   const emailId = searchParams.get('emailId');
   const dataEntries = JSON.parse(decodeURIComponent(searchParams.get('dataEntries') || '[]'));
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-6 bg-gray-100">
       <div className="container mx-auto p-8 bg-white shadow-lg rounded-lg text-left">
-        <h1 className="text-2xl font-bold mb-6 text-center">{companyName}'s Privacy Notice</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center">{companyName}&apos;s Privacy Notice</h1>
         <p className="text-lg">
-          <strong>{companyName}</strong> deeply values your right to privacy and is committed to protecting your personal data in accordance with applicable law. This Privacy Notice explains how <strong>{companyName}</strong> ("us", "we", or "our") collects, uses, discloses, transfers, and otherwise processes your personal data when you use our services or interact with us.
+          <strong>{companyName}</strong> deeply values your right to privacy and is committed to protecting your personal data in accordance with applicable law. This Privacy Notice explains how <strong>{companyName}</strong> (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;) collects, uses, discloses, transfers, and otherwise processes your personal data when you use our services or interact with us.
         </p>
         <p className="mt-4 text-lg">
           Personal data has the same meaning as that under applicable law and includes information that is about you, or can identify you directly, or in relation to such data (such as indirectly, in combination with other information).
@@ -24,7 +28,7 @@ export default function FinalPolicyPage() {
         <div className="mt-6">
           <h2 className="text-lg mb-4">We process your personal data for the following purposes:</h2>
           <ol className="list-decimal list-inside">
-            {dataEntries.map((item: any, index: any) => (
+            {dataEntries.map((item: DataEntry, index: number) => (
               <li key={index} className="mb-2">
                 <strong>{item.data}</strong> - {item.purpose}
               </li>
