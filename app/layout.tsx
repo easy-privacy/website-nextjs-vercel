@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,10 +30,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-
-        <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-        <script src="https://files.bpcontent.cloud/2024/10/02/18/20241002180514-ROWQ8QE8.js"></script>
-      
+        <Script
+          src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://files.bpcontent.cloud/2024/10/02/18/20241002180514-ROWQ8QE8.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
