@@ -25,6 +25,38 @@ const faqs = [
   {
     question: "What kind of support do you provide?",
     answer: "We offer comprehensive support to ensure you get the most out of our service. This includes setup assistance, customization help, and ongoing updates to keep your privacy policy and chatbot compliant with the latest regulations."
+  },
+  {
+    question: "What is the primary purpose of the Digital Personal Data Protection Act, 2023?",
+    answer: "This Act aims to balance the rights of individuals to safeguard their personal data and the legitimate need for data processing. It outlines the framework for digital personal data processing within India."
+  },
+  {
+    question: "When does this Act come into effect, and to what data does it apply?",
+    answer: "The Act's implementation date will be announced by the Central Government. It covers digital personal data collected in India, whether gathered digitally or converted later. It also applies to data processed outside India if linked to goods or services offered within India."
+  },
+  {
+    question: "Does this Act apply to all data processing?",
+    answer: "There are exceptions. Data processed by an individual for personal or domestic reasons is exempt. Additionally, data voluntarily made public by the Data Principal or disclosed due to legal obligations in India is also excluded."
+  },
+  {
+    question: "What is 'lawful purpose' under this Act, and how does 'consent' play a role?",
+    answer: "'Lawful purpose' refers to data processing not explicitly prohibited by law. Data processing requires either the Data Principal's consent or if it falls under 'certain legitimate uses' as defined by the Act."
+  },
+  {
+    question: "What constitutes valid 'consent' for data processing?",
+    answer: "Consent must be freely given, specific to the purpose, informed, unconditional, and clearly expressed. The Data Principal must fully understand the purpose and extent of data processing."
+  },
+  {
+    question: "What rights does a Data Principal have regarding their personal data?",
+    answer: "Data Principals can access information about processed data, request correction or erasure, nominate another individual to manage their data in case of death or incapacity, and seek grievance redressal."
+  },
+  {
+    question: "What are the obligations of a Data Fiduciary?",
+    answer: "Data Fiduciaries must comply with the Act, engage Data Processors under valid contracts, ensure data accuracy for significant decisions, implement security measures against breaches, and erase data when no longer necessary or upon consent withdrawal."
+  },
+  {
+    question: "What is the role of the Data Protection Board of India under this Act?",
+    answer: "The Board investigates data breaches, handles complaints from Data Principals, can impose penalties, issues directions to ensure compliance, and may block public access to a Data Fiduciary's information in public interest upon repeated violations."
   }
 ];
 
@@ -35,12 +67,12 @@ const DpdpFaqsPage = () => {
     <div className="min-h-screen bg-gray-100 text-gray-800">
       {/* Header */}
       <header className="px-4 lg:px-6 h-16 flex items-center justify-between border-b border-gray-200 bg-white shadow-sm">
-      <div
-        className="flex items-center cursor-pointer"
-        onClick={() => router.push('/')}
+        <div
+          className="flex items-center cursor-pointer"
+          onClick={() => router.push('/')}
         >
-        <Shield className="h-8 w-8 text-blue-600" />
-        <span className="ml-2 text-xl font-bold text-blue-600">Easy Privacy</span>
+          <Shield className="h-8 w-8 text-blue-600" />
+          <span className="ml-2 text-xl font-bold text-blue-600">Easy Privacy</span>
         </div>
         <div className="space-x-4">
           <button
@@ -62,12 +94,14 @@ const DpdpFaqsPage = () => {
       <main className="px-4 lg:px-6 py-10">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-center text-blue-600 mb-8">Frequently Asked Questions</h1>
-          {faqs.map((faq, index) => (
-            <div className="faq-item mb-6" key={index}>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{faq.question}</h3>
-              <p className="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {faqs.map((faq, index) => (
+              <div className="faq-item p-4 bg-white rounded-lg shadow-md" key={index}>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                <p className="text-gray-700">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
 
